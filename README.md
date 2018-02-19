@@ -1,5 +1,5 @@
 # Intro
-This document is 
+This document is a reacap of what do you need to create a LFO with some simple javascipt functions.
 
 ## Toolbox
 ### Input value
