@@ -1,20 +1,23 @@
 # Intro
 This document is a reacap of what do you need to create a LFO with some simple javascipt functions.
 
-## Toolbox
-### Input value
+# See it in action
+[Demo](https://codepen.io/wanbinkimoon/pen/qrQErj)
+
+# Toolbox
+## Input value
 We are going to use this slider to control the values 
 ```html
 <input type="range" id="someInputID" min="0" max="100" step="0.5" value="50" />
 ```
 
-### Output value
+## Output value
 This component will print the value of the input with the `id` matchig his `for` attribute.
 ```html
 <output id="someOutputID" for="someInputID"></output>
 ```
 
-### Form structure
+## Form structure
 
 ```html
 <form oninput="someOutputID.value=someInputID.value">
@@ -23,12 +26,12 @@ This component will print the value of the input with the `id` matchig his `for`
 </form>
 ```
 
-### Button
+## Button
 ```html
 <button onclick="some.action();">DESCRIPTIVE LABEL</button>
 ```
 
-## Walkthrought
+# Walkthrought
 ### 1. Get audio context 
 [AudioContext in details, pt - 1](https://developer.mozilla.org/en-US/docs/Web/API/AudioContext)
 [AudioContext in details, pt - 2](https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext)
@@ -85,10 +88,10 @@ osc.connect(con.destination);
 lfo.start();
 ```
 
-## Extra
+# Extra
 [Oscillator control](https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type)
 
-## Final code 
+# Final code 
 ### HTML 
 ```html
 <form oninput="oscN.value=parseInt(oscFreq.value)">
