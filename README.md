@@ -53,8 +53,40 @@ osc.frequency.value = SomeInputID.value;
 lfo.frequency.value = 300;
 ```
 
+### 4. Linking the effect 
+```javascript
+lfoAmp.gain.value = gainVal.value;
+```
 
+### 5. Linking the `inputs`
+```javascript
+oscFreq.addEventListener('input', function() {
+  osc.frequency.value = oscFreq.value;
+});
 
+lfoFreq.addEventListener('input', function() {
+  lfo.frequency.value = lfoFreq.value;
+});
+
+gainVal.addEventListener('input', function() {
+  lfoAmp.gain.value = gainVal.value;
+});
+```
+
+### 6. Define the destination of the `inputs`
+```javascript
+lfo.connect(lfoAmp);
+lfoAmp.connect(osc.frequency);
+osc.connect(con.destination);
+```
+
+### 7. Start the game
+```javascript
+lfo.start();
+```
+
+## Extra
+[Oscillator control](https://developer.mozilla.org/en-US/docs/Web/API/OscillatorNode/type)
 
 ## Final code 
 ### HTML 
@@ -66,7 +98,7 @@ lfo.frequency.value = 300;
 </form>
 
 <form oninput="lfoN.value=lfoFreq.value">
-<h2>Low oscillator frequency</h2>
+<h2>LFO frequency</h2>
   <input type="range" id="lfoFreq" min="0" max="50" step="0.5" value="0.5" />
   <output id="lfoN" for="lfoFreq"></output>
 </form>
